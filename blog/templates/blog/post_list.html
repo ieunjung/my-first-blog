@@ -10,17 +10,14 @@
       <h1><a href="#">Django Girls Blog</a></h1>
     </div>
 
-    <div class="">
-        <p>published : 14.06.2014, 12:14</p>
-        <h2><a href="#">My First Post</a></h2>
-        <p>Welcome My place! Please follow my rules.</p>
-    </div>
-
-    <div class="">
-        <p>published : 14.06.2014, 12:14</p>
-        <h2><a href="#">My First Post</a></h2>
-        <p>Welcome My place! Please follow my rules.</p>
-    </div>
+      {% for post in posts %}
+        <div class="">
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="#">{{ post.title }}</a></h1>
+          <!-- linebreaksbr : 행이 바뀌면 문단으로 변환하라. -->
+          <p>{{ post.text | linebreaksbr }}</p>
+        </div>
+      {% endfor %}
 
   </body
 </html>
