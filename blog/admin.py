@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Comment
 
 admin.site.register(Post)
-
-# Register your models here.
+# comment 모델 등록
+admin.site.register(Comment)
