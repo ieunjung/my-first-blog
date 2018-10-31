@@ -20,6 +20,7 @@
 
   <a href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
   {% for comment in post.comments.all %}
+  
       {% if user.is_authenticated or comment.approved_comment %}
       <div class="comment">
           <div class="date">{{ comment.created_date }}
